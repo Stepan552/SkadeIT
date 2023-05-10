@@ -1,0 +1,308 @@
+/* Винесення всіх класів, які будуть використовуватися на інших веб-сторінках сайту, в загальні стилі
+для оптимізації коду */
+
+html {
+  font-size: 14px;
+}
+
+body {
+  font-family: 'Raleway';
+  font-weight: 500;
+  color: #252a2f;
+  /* не добавляти сюди line-height, так як він вплине на всі елементи, що в свою чергу виразиться неправильною висотою блока */
+}
+.container {
+  max-width: 1160px; /* +40px, так як встановлені падінги по 20px з ліва та справа */
+  margin: 0 auto;
+  padding: 0px 20px; /* Щоб контент не торкався країв екрану при зменшенні ширини вікна браузера */
+}
+
+/* header */
+.header {
+  background-color: #170f1b;
+  padding: 28px 0px;
+}
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__navigation {
+  display: flex;
+  align-items: center;
+}
+.header__social-links {
+  display: flex;
+  align-items: center;
+}
+.header__social-links > li:not(:last-child) {
+  margin-right: 20px;
+}
+
+.header__logo {
+}
+.header__logo-link {
+}
+.header__logo-image {
+}
+.header__social-element {
+}
+.header__social-link {
+}
+
+.header__social-image:hover path {
+  fill: #1abcfe; /* Змінити колір svg елемента */
+}
+.header__social-image path {
+  transition: fill 0.3s ease-in-out 0.1s;
+}
+
+.header__burger,
+.header__clicked-burger {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.header__burger::before,
+.header__burger::after {
+  content: '';
+}
+/*----c-----*/
+.header__clicked-burger::before,
+.header__clicked-burger::after {
+  content: '';
+}
+.header__burger-middle-element,
+.header__burger::before,
+.header__burger::after {
+  width: 35px;
+  height: 7px;
+  background-color: #dee1e6;
+  margin-bottom: 3px;
+}
+.header__burger-middle-element {
+  transition: all 0.2s ease 0.01s;
+}
+.header__burger::before,
+.header__burger::after {
+  transition: transform 0.5s ease 0.01s;
+}
+.header__burger::after {
+  margin-bottom: 0;
+}
+/* ----c----- */
+.header__clicked-burger::before,
+.header__clicked-burger::after {
+  transition: transform 0.5s ease 0.01s;
+  width: 35px;
+  height: 7px;
+  background-color: #dee1e6;
+}
+.header__clicked-burger::before {
+  transform: rotate(-45deg) translateY(12px);
+}
+.header__clicked-burger::after {
+  transform: rotate(45deg) translateY(-12px);
+}
+.header__clicked-burger .header__burger-middle-element {
+  transform: rotate(90deg) translateY(-9px);
+  width: 0;
+}
+
+.header__burger,
+.header__clicked-burger {
+  cursor: pointer;
+  margin-left: 80px;
+}
+
+.header__navigation-menu {
+  border-radius: 10px 0 10px 10px;
+  width: 230px;
+  padding: 30px 0px;
+  background-color: #231928;
+  position: absolute;
+  top: 27px;
+  left: calc(-230px + 35px);
+  cursor: auto;
+  overflow: hidden;
+
+  transition: transform 0.5s ease-in-out 0.1s;
+  transform-origin: center top;
+  z-index: 10;
+}
+.header__navigation-menu_hidden {
+  transform: scaleY(0);
+}
+.header__navigation-menu-item {
+  font-weight: 700px;
+  font-size: 1.43rem;
+  color: #fafafa;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+.header__navigation-menu-link {
+  padding: 10px 0px;
+  display: block;
+  transition: background-color 0.3s ease-in-out 0.1s;
+}
+.header__navigation-menu-link:hover {
+  background-color: #362b3b;
+}
+.header__navigation-menu-link:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+/*  footer  */
+
+.footer {
+  padding: 108px 0px 107px 0px;
+  background-color: #dee1e6;
+  font-size: 1.29rem;
+  line-height: 21px;
+}
+.footer h2 {
+  font-size: 2.5rem;
+  line-height: normal;
+}
+.footer__wrapper {
+  display: flex;
+  align-items: center;
+}
+.footer__contacts {
+  flex-basis: 265px;
+  margin-right: 20px;
+}
+.footer__contacts a {
+  display: block;
+  text-decoration: underline;
+  transition: color 0.2s ease-in-out 0.1s;
+}
+.footer__contacts a:not(:first-child) {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+}
+.footer__contacts-title {
+  margin-bottom: 20px;
+}
+.footer__contacts a:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footer__contacts a:hover {
+  color: #393f46;
+}
+
+.footer__contacts-email {
+}
+.footer__contacts-tel {
+}
+.footer__icons {
+  display: flex;
+  margin-top: 30px;
+}
+.footer__icon {
+  opacity: 0.4;
+  transition: opacity 0.3s ease-in-out 0.1s;
+}
+.footer__icons > a:not(:last-child) {
+  margin-right: 19px;
+}
+.footer__icon:hover {
+  opacity: 1;
+}
+.footer__middle-box {
+  margin-right: 80px;
+}
+.footer__middle-box > * {
+  max-width: 360px;
+}
+.footer__services {
+  margin-bottom: 31px;
+}
+.footer__services-title {
+  margin-bottom: 20px;
+}
+.footer__service:not(:last-child) {
+  margin-bottom: 12px;
+}
+.footer__cooperation {
+}
+.footer__cooperation-title {
+  margin-bottom: 19px;
+}
+.footer__cooperation-text {
+}
+.footer__form {
+}
+.footer__form-title {
+  text-align: center;
+  margin-bottom: 29px;
+}
+.footer__email-field {
+  height: 51px;
+}
+.footer__email-field,
+.footer__message-field {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 337px;
+}
+.footer__message-field {
+  height: 136px;
+}
+
+.footer__form-submit {
+  background-color: #252a2f;
+  opacity: 0.9;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out 0.1s;
+}
+.footer__form-submit:hover {
+  box-shadow: none;
+  opacity: 1;
+}
+
+/* ---------------------------- */
+
+.deep-title {
+  color: #170f1b;
+  font-weight: 700;
+}
+
+.light-title {
+  color: #dee1e6;
+  font-size: 2.86rem;
+  font-weight: 700;
+}
+
+.under-title-content {
+  line-height: 1.5em;
+}
+
+.button {
+  color: #dee1e6;
+  display: block;
+  font-size: 1.43rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 20px 30px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease-in-out 0.1s;
+}
+.button:hover {
+  box-shadow: 0px 2px 5px #170f1b;
+}
+
+.message-field {
+  padding: 15px 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 1px solid rgba(37, 42, 47, 0.7);
+  background-color: #fafafa;
+  font-size: 1.29rem;
+}
+.message-field:focus {
+  border-width: 2px;
+}

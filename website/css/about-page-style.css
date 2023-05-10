@@ -1,0 +1,180 @@
+/* about-data */
+.about-data {
+  background-color: #1e1522;
+  overflow: hidden;
+  padding: 128px 0;
+}
+.about-data__wrapper {
+}
+.about-data__box {
+  max-width: 455px;
+  margin-left: 20px;
+  position: relative;
+}
+.about-data__title {
+  color: #fafafa;
+  font-size: 3.21rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.about-data__title > span {
+  color: #1abcfe;
+}
+.about-data__text {
+  width: 360px;
+  font-size: 1.14rem;
+  line-height: 1.3em;
+  color: #dee1e6;
+}
+.about-data__text > p:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.about-data__decorations {
+  position: absolute;
+  left: 389px;
+  top: -60.5px;
+}
+
+/* work-way  */
+
+.work-way {
+  background-color: #fafafa;
+  padding: 120px 0;
+}
+
+.work-way__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.work-way__image-box {
+  width: 550px;
+  height: 370px;
+}
+.work-way__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.work-way__content {
+  max-width: 455px;
+}
+.work-way__description {
+  margin-bottom: 18px;
+}
+
+.work-way__description-title {
+  font-size: 2.86rem;
+  margin-bottom: 18px;
+}
+.work-way__description-text {
+}
+.work-way__cooperation {
+  margin-bottom: 15px;
+}
+.work-way__cooperation-title,
+.work-way__advantage-title {
+  font-size: 2.14rem;
+  margin-bottom: 15px;
+}
+.work-way__cooperation-text {
+}
+.work-way__advantage {
+}
+.work-way__advantage-text {
+}
+
+/* sending-message */
+
+.sending-message {
+  background-color: #1e1522;
+  padding-top: 75px;
+  padding-bottom: 106px;
+}
+
+.sending-message__wrapper {
+}
+.sending-message__title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.sending-message__form {
+  display: flex;
+  align-items: center;
+  width: 832px;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.sending-message__client-info > *:not(:last-child) {
+  margin-bottom: 25px;
+}
+.sending-message__client-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.sending-message__email-field,
+.sending-message__mobile-field {
+  width: 337px;
+  height: 51px;
+}
+.sending-message__email-field {
+}
+.sending-message__mobile-field {
+}
+.sending-message__message-field-box {
+}
+.sending-message__message-field {
+  width: 445px;
+  height: 186px;
+}
+.sending-message__button {
+  background-color: #1abcfe;
+  width: 262px;
+  height: 63px;
+}
+
+/*  crm-system   */
+
+.crm-system {
+  padding-top: 70px;
+  padding-bottom: 105px;
+  background-color: #170f1b;
+}
+
+.crm-system__wrapper {
+}
+.crm-system__title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #fafafa;
+  max-width: 780px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+.crm-system__title > span {
+  color: #009cdb;
+}
+.crm-system__content-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 806px;
+  margin: 0 auto;
+}
+.crm-system__description {
+  width: 526px;
+  color: #fafafa;
+  font-size: 1.43rem;
+
+  line-height: 1.3em;
+}
+.crm-system__icon-box {
+}
+.crm-system__icon {
+  transition: transform 1.5s ease-in-out 0.1s;
+}
+.crm-system__icon:hover {
+  transform: rotate(360deg);
+}

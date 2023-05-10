@@ -1,0 +1,402 @@
+/*  about-project  */
+
+.about-project {
+  padding: 48px 0;
+}
+.about-project__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.about-project__content {
+  flex-basis: 455px;
+}
+
+/* 
+
+0 - 575px - x-small devices
+576px - 767px - small devices 
+768px - 991px - medium devices
+992px - 1199px - large devices
+1200px - 1399px - extra large devices 
+>= 1400px - extra extra large devices 
+
+control points that are applied in max-width media feature
+575px 
+767px 
+991px
+1199px 
+1399px 
+
+*/
+
+.about-project__title {
+  padding-bottom: 5px;
+  width: 300px;
+  border-bottom: 1px solid hsla(280, 29%, 8%, 0.25);
+  font-size: 2.86rem;
+
+  margin-bottom: 10px;
+}
+
+.about-project__subtitle {
+  margin: 10px 0;
+  font-size: 1.79rem;
+}
+.about-project__image {
+  max-width: 600px;
+  height: 360px;
+}
+.about-project__image img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1199px) {
+  .about-project__content {
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 991px) {
+  .about-project__content,
+  .about-project__image {
+    margin: 0 auto;
+  }
+  .about-project__content {
+    margin-bottom: 30px;
+    flex-basis: 600px;
+  }
+  .about-project__wrapper {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-project__content {
+    padding-left: 10px;
+  }
+  .about-project__title {
+    font-size: 2rem;
+  }
+  .about-project__subtitle {
+    font-size: 1.5rem;
+  }
+  .about-project__image {
+    height: 300px;
+  }
+}
+/* projects-demonstration */
+.projects-demonstration {
+  padding: 40px 0;
+  background: url('../images/projects-demonstration/it-background.png') center
+    center no-repeat;
+  background-size: cover;
+}
+
+.projects-demonstration__title {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.projects-demonstration__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.projects-demonstration__card {
+}
+.project-card {
+  max-width: 330px;
+  background-color: hsla(218, 14%, 89%, 0.8);
+  border-bottom-right-radius: 15px;
+}
+.slider {
+  overflow: hidden;
+  position: relative;
+}
+.project-card__slider {
+  width: 330px;
+}
+.slider__slides {
+  display: flex;
+  transition: transform 0.8s ease-in-out 0.05s;
+}
+.slider__slide {
+  height: 230px;
+}
+.slider__image {
+  width: 330px;
+  height: 100%;
+  object-fit: cover;
+}
+.slider__indicators {
+  display: flex;
+  position: absolute;
+  bottom: 8px;
+  /* left: calc(
+    330px / 2 - 44px / 2
+  ); розмістити індикатори посередині відносно слайдера */
+
+  /* Більш автоматизований спосіб за спосіб з використанням calc */
+  left: 50%;
+  transform: translateX(-50%);
+
+  column-gap: 4px;
+}
+.slider__indicator {
+  height: 12px;
+  width: 12px;
+  background-color: #dee1e6;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out 0.05s;
+}
+
+.slider__indicator_active {
+  background-color: #1abcfe;
+}
+.project-card__content {
+  line-height: 1.5em;
+  padding: 30px 18px 83px;
+}
+.project-card__content span {
+  font-weight: 900;
+}
+
+.projects-demonstration__portfolio-advantage {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 202px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.projects-demonstration__advantage {
+  width: 372px;
+  color: #dee1e6;
+}
+.projects-demonstration__advantage-title {
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.projects-demonstration__advantage-title > span {
+  color: #1abcfe;
+}
+.projects-demonstration__advantage-text {
+  max-width: 360px;
+}
+
+.projects-demonstration__portfolio-button {
+  background-color: #1abcfe;
+}
+
+@media (max-width: 1079px) {
+  .projects-demonstration__wrapper {
+    align-items: center;
+    flex-direction: column;
+  }
+  .project-card {
+    max-width: 600px;
+  }
+  .project-card__content {
+    display: none;
+  }
+  .project-card:not(:last-child) {
+    margin-bottom: 25px;
+  }
+  .project-card__slider {
+    width: 600px;
+  }
+  .slider__slide {
+    height: 370px;
+  }
+  .slider__image {
+    width: 600px;
+  }
+}
+/*  advantages  */
+
+.advantages {
+  padding-top: 70px;
+  padding-bottom: 58px;
+}
+.advantages__description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 182px 0px 162px;
+  margin-bottom: 45px;
+}
+.advantage-slider {
+  display: flex;
+  /* width: 416px; */
+  justify-content: space-between;
+  flex-basis: 416px;
+  /* height: 426px; задаємо в атрибуті style даного елемента */
+  overflow: hidden;
+}
+.advantages__slider {
+}
+.advantage-slider__indicator-box {
+  height: 426px;
+  width: 8px;
+  border: 1px solid rgba(37, 42, 47, 0.25);
+  position: relative;
+  background-color: #dee1e6;
+}
+.advantage-slider__indicator {
+  position: absolute;
+  /* height: calc(426px / 4);  Висота задається в атрибуті style даного елемента, щоб отримати доступ через скріпт*/
+  width: 6px;
+  top: 0;
+  transition: top 3s ease-in-out 0.1s;
+  background-color: #1abcfe;
+}
+.advantage-slider__slides {
+  /* transform: translateY(
+    -1278px
+  ); Необхідно буде прогортати даний блок вниз по 426px, щоб змінювати слайди (задано в атрибуті style) */
+  transition: transform 3s ease-in-out 0.1s;
+}
+.advantage-slider__slide {
+  display: flex;
+  flex-direction: column;
+  height: 426px;
+  justify-content: space-between;
+}
+.advantage-slider__slide-image {
+  height: 203px;
+  width: 360px;
+}
+.advantage-slider__slide-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.advantages__content {
+  width: 307px;
+}
+.advantages__description-title {
+  font-size: 2.86rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.advantages__description-text {
+  text-align: center;
+}
+.advantages__description-text span {
+  font-weight: 600;
+}
+.advantages__items {
+}
+.advantages__title {
+  text-align: center;
+  font-size: 2.86rem;
+  margin-bottom: 30px;
+}
+.advantages__items-box {
+  max-width: 808px;
+  margin: 0 auto;
+}
+.advantages__item {
+  display: flex;
+  align-items: center;
+}
+.advantages__item:not(:last-child) {
+  margin-bottom: 25px;
+}
+.advantages__item > p {
+  font-weight: 600;
+  color: #c7c7c7;
+  font-size: 1.79rem;
+  text-transform: uppercase;
+  margin-left: 18px;
+  transition: color 0.2s ease-in-out 0.05s;
+}
+.advantages__item > svg {
+  cursor: pointer;
+}
+.advantages__item > svg path {
+  transition: fill 0.2s ease-in-out 0.05s;
+}
+.advantages__item > svg:hover + p {
+  color: #170f1b;
+}
+.advantages__item > svg:hover path {
+  fill: #1abcfe;
+}
+
+/* services  */
+
+.services {
+  background-color: #1e1522;
+  padding: 87px 0;
+}
+.services__technologies-icons {
+  max-width: 862px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+  margin-bottom: 70px;
+}
+.services__technology-icon-box {
+}
+
+.services__technologies-middle-icons-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 158px;
+}
+.services__technologies-middle-icons-box > * {
+  display: flex;
+  justify-content: space-between;
+}
+.services__technologies-icons-first-row {
+  width: 264px;
+}
+.services__technologies-icons-second-row {
+  width: 302px;
+}
+.services__technologies-icons svg {
+  cursor: pointer;
+}
+.services__technologies-icons svg path {
+  transition: fill 0.2s ease-in-out 0.1s;
+}
+.services__technologies-icons svg:hover path {
+  fill: #1abcfe;
+}
+.services__technologies-description {
+  max-width: 930px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.services__technologies-description-box {
+  flex-basis: 400px;
+}
+.service-technologies-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.services__technologies-description-box {
+}
+.service-technologies-box__title {
+  text-align: center;
+  margin-bottom: 25px;
+}
+.service-technologies-box__text {
+  text-align: center;
+  color: #dee1e6;
+  margin-bottom: 30px;
+  flex-grow: 1;
+}
+.service-technologies-box__button {
+  background-color: #1abcfe;
+}
