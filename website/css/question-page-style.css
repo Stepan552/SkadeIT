@@ -4,7 +4,6 @@
   padding-top: 75px;
   padding-bottom: 125px;
 }
-
 .question__wrapper {
   display: flex;
   align-items: flex-start;
@@ -52,13 +51,10 @@
   );
   min-height: 850px;
 }
-
 .question-items__title {
   font-size: 2.14rem;
   margin-bottom: 26px;
   text-align: center;
-}
-.question-items__box {
 }
 .question-items__item {
   max-width: 400px;
@@ -115,23 +111,117 @@
   height: 200px;
   padding: 22px 20px;
 }
+
+@media (max-width: 1149px) {
+  .question__form {
+    margin: 0 60px;
+    margin-top: 148px;
+  }
+}
+@media (max-width: 991px) {
+  .question__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .question__form {
+    order: 1;
+  }
+  .question-items {
+    order: 0;
+    min-height: auto;
+  }
+}
+@media (max-width: 767px) {
+  .question {
+    padding: 60px 0;
+  }
+  .question__form {
+    margin-top: 100px;
+  }
+}
+@media (max-width: 575px) {
+  .question {
+    padding: 40px 0;
+  }
+  .question-items {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .question-items__item-box-text {
+    font-size: 1rem;
+  }
+  .question__form {
+    margin-top: 60px;
+  }
+}
+@media (max-width: 469px) {
+  .question__form-title {
+    font-size: 2rem;
+  }
+  .question__form input,
+  .question__form textarea {
+    width: 250px;
+  }
+  .question__message-field {
+    height: 100px;
+  }
+  .question__form-submit {
+    font-size: 1.2rem;
+  }
+  .question-items__title {
+    font-size: 1.7rem;
+  }
+  .question-items__item-description {
+    right: -7px;
+  }
+}
+@media (max-width: 379px) {
+  .question-items__item-box-text {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 329px) {
+  .question-items__item-description {
+    right: -5px;
+  }
+}
+
 /*  connection */
 .connection {
   background-color: #170f1b;
   padding-bottom: 128px;
   padding-top: 129px;
 }
-
-.connection__wrapper {
-}
-
 .connection__title {
   text-align: center;
   margin-bottom: 30px;
 }
-
 .connection__button {
   background-color: #1abcfe;
   width: 269px;
   margin: 0 auto;
 }
+@media (max-width: 991px) {
+  .connection__title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 767px) {
+  .connection {
+    padding: 70px 0;
+  }
+}
+@media (max-width: 575px) {
+  .connection {
+    padding: 40px 0;
+  }
+  .connection__title {
+    font-size: 1.7rem;
+  }
+  .connection__button {
+    width: 250px;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
+/* Проект належить https://github.com/Stepan552 */

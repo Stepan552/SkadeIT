@@ -3,9 +3,6 @@
   padding-top: 75px;
   background-color: #fafafa;
 }
-
-.portfolio__wrapper {
-}
 .portfolio__description {
   max-width: 550px;
   margin: 0 auto;
@@ -19,8 +16,6 @@
 .portfolio__description-text {
   font-size: 1.43rem;
   line-height: 1.3em;
-}
-.portfolio__projects {
 }
 .portfolio-project {
   filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.25));
@@ -37,7 +32,6 @@
 .portfolio__project:not(:last-child) {
   margin-bottom: 60px;
 }
-
 .portfolio-project__background {
   width: 100%;
   height: 100%;
@@ -87,19 +81,14 @@
 }
 
 .portfolio-project__decoration {
-  width: 2000px;
+  width: 100vw;
   height: 100px;
   position: absolute;
-  z-index: -1;
+  z-index: -10;
   background-color: #170f1b;
-  left: -50%;
-  top: 180px;
-}
-.portfolio-project__decoration_positive {
-  transform: rotate(15deg);
-}
-.portfolio-project__decoration_negative {
-  transform: rotate(-15deg);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
 }
 .portfolio-project__hover-element {
   position: absolute;
@@ -114,6 +103,7 @@
   justify-content: center;
   overflow: hidden;
   transition: width 0.4s ease-in-out 0.1s;
+  text-align: center;
 }
 .portfolio-project__hover-element-link {
   text-decoration: underline;
@@ -125,3 +115,71 @@
 .portfolio-project__hover-element-link:hover {
   color: #1abcfe;
 }
+
+@media (max-width: 767px) {
+  .portfolio {
+    padding: 60px 0;
+  }
+  .portfolio-project {
+    padding-left: 0;
+  }
+  .portfolio-project__box {
+    display: none;
+  }
+  .portfolio-project__decoration {
+    display: none;
+  }
+}
+@media (max-width: 599px) {
+  .portfolio {
+    padding: 40px 0;
+  }
+  .portfolio__description {
+    margin-bottom: 40px;
+  }
+  .portfolio__description-title {
+    font-size: 2.2rem;
+  }
+  .portfolio__description-text {
+    font-size: 1.2rem;
+  }
+  .portfolio-project {
+    height: 300px;
+  }
+  .portfolio__project:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  .portfolio-project__hover-element-link {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 459px) {
+  .portfolio__description-text {
+    font-size: 1rem;
+  }
+  .portfolio-project {
+    height: 230px;
+  }
+  .portfolio__project:not(:last-child) {
+    margin-bottom: 40px;
+  }
+  .portfolio-project__box-new {
+    display: none;
+  }
+  .portfolio__description-title {
+    font-size: 1.8rem;
+  }
+  .portfolio-project__hover-element-link {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 349px) {
+  .portfolio-project {
+    height: 200px;
+  }
+  .portfolio__project:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+/* Проект належить https://github.com/Stepan552 */

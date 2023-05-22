@@ -153,7 +153,11 @@ body {
 .header__navigation-menu-link:not(:last-child) {
   margin-bottom: 15px;
 }
-
+@media (max-width: 575px) {
+  .header__social-links {
+    display: none;
+  }
+}
 /*  footer  */
 
 .footer {
@@ -170,6 +174,7 @@ body {
   display: flex;
   align-items: center;
 }
+
 .footer__contacts {
   flex-basis: 265px;
   margin-right: 20px;
@@ -191,11 +196,6 @@ body {
 }
 .footer__contacts a:hover {
   color: #393f46;
-}
-
-.footer__contacts-email {
-}
-.footer__contacts-tel {
 }
 .footer__icons {
   display: flex;
@@ -226,14 +226,8 @@ body {
 .footer__service:not(:last-child) {
   margin-bottom: 12px;
 }
-.footer__cooperation {
-}
 .footer__cooperation-title {
   margin-bottom: 19px;
-}
-.footer__cooperation-text {
-}
-.footer__form {
 }
 .footer__form-title {
   text-align: center;
@@ -264,6 +258,103 @@ body {
   opacity: 1;
 }
 
+@media (max-width: 991px) {
+  .footer__wrapper {
+    flex-direction: column;
+  }
+  .footer__wrapper > *:not(:first-child) {
+    margin-bottom: 30px;
+  }
+  .footer__middle-box {
+    margin-right: 0;
+    order: 0;
+  }
+  .footer__middle-box > * {
+    max-width: 520px;
+  }
+  .footer__services-title,
+  .footer__cooperation-title {
+    text-align: center;
+  }
+  .footer__service {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    padding-left: 40px;
+  }
+  .footer__cooperation-text {
+    text-align: center;
+    padding-left: 40px;
+  }
+  .footer__form {
+    order: 1;
+    margin-top: 60px;
+  }
+  .footer__wrapper .footer__form {
+    margin-bottom: 60px;
+  }
+  .footer__form-submit {
+    margin: 0 auto;
+  }
+  .footer__contacts {
+    flex-basis: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+    order: 2;
+  }
+  .footer h2 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 767px) {
+  .footer {
+    padding: 70px 0;
+  }
+}
+@media (max-width: 575px) {
+  .footer {
+    padding: 40px 0;
+  }
+  .footer__cooperation-text {
+    font-size: 1rem;
+  }
+  .footer__service,
+  .footer__cooperation-text {
+    padding: 0 20px;
+  }
+  .footer__form {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 389px) {
+  .footer__service {
+    font-size: 1rem;
+  }
+  .footer__service:not(:last-child) {
+    margin-bottom: 6px;
+  }
+  .footer__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer__form > .footer__email-field,
+  .footer__form > .footer__message-field {
+    width: 250px;
+    font-size: 1.1rem;
+  }
+  .footer__email-field {
+    margin-bottom: 10px;
+  }
+  .footer__message-field {
+    height: 100px;
+  }
+  .footer h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+}
 /* ---------------------------- */
 
 .deep-title {
@@ -306,3 +397,4 @@ body {
 .message-field:focus {
   border-width: 2px;
 }
+/* Проект належить https://github.com/Stepan552 */

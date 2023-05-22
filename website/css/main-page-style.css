@@ -11,34 +11,13 @@
 .about-project__content {
   flex-basis: 455px;
 }
-
-/* 
-
-0 - 575px - x-small devices
-576px - 767px - small devices 
-768px - 991px - medium devices
-992px - 1199px - large devices
-1200px - 1399px - extra large devices 
->= 1400px - extra extra large devices 
-
-control points that are applied in max-width media feature
-575px 
-767px 
-991px
-1199px 
-1399px 
-
-*/
-
 .about-project__title {
   padding-bottom: 5px;
-  width: 300px;
+  max-width: 300px;
   border-bottom: 1px solid hsla(280, 29%, 8%, 0.25);
   font-size: 2.86rem;
-
   margin-bottom: 10px;
 }
-
 .about-project__subtitle {
   margin: 10px 0;
   font-size: 1.79rem;
@@ -76,6 +55,7 @@ control points that are applied in max-width media feature
 @media (max-width: 767px) {
   .about-project__content {
     padding-left: 10px;
+    padding-right: 0;
   }
   .about-project__title {
     font-size: 2rem;
@@ -85,6 +65,11 @@ control points that are applied in max-width media feature
   }
   .about-project__image {
     height: 300px;
+  }
+}
+@media (max-width: 575px) {
+  .about-project {
+    padding: 40px 0;
   }
 }
 /* projects-demonstration */
@@ -105,57 +90,45 @@ control points that are applied in max-width media feature
   justify-content: space-between;
 }
 
-.projects-demonstration__card {
-}
 .project-card {
   max-width: 330px;
   background-color: hsla(218, 14%, 89%, 0.8);
   border-bottom-right-radius: 15px;
 }
-.slider {
+.project-card__slider {
   overflow: hidden;
   position: relative;
+  max-width: 330px;
 }
-.project-card__slider {
-  width: 330px;
-}
-.slider__slides {
+.project-card__slider > *:first-child {
   display: flex;
-  transition: transform 0.8s ease-in-out 0.05s;
+  transition: transform 1.2s ease-in-out 0.05s;
 }
-.slider__slide {
-  height: 230px;
-}
-.slider__image {
-  width: 330px;
+
+.project-card__slider img {
   height: 100%;
   object-fit: cover;
 }
-.slider__indicators {
+.project-card__slider > *:last-child {
   display: flex;
   position: absolute;
   bottom: 8px;
-  /* left: calc(
-    330px / 2 - 44px / 2
-  ); розмістити індикатори посередині відносно слайдера */
-
-  /* Більш автоматизований спосіб за спосіб з використанням calc */
   left: 50%;
   transform: translateX(-50%);
-
   column-gap: 4px;
 }
-.slider__indicator {
+.project-card__slider > *:last-child > * {
   height: 12px;
   width: 12px;
   background-color: #dee1e6;
   border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out 0.05s;
+  transition: background-color 0.4s ease-in-out 0.05s;
 }
-
-.slider__indicator_active {
-  background-color: #1abcfe;
+.project-first-slider__indicator_active,
+.project-second-slider__indicator_active,
+.project-third-slider__indicator_active {
+  background-color: #1abcfe !important;
 }
 .project-card__content {
   line-height: 1.5em;
@@ -171,7 +144,6 @@ control points that are applied in max-width media feature
   align-items: center;
   padding: 0 202px;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 .projects-demonstration__advantage {
   width: 372px;
@@ -190,32 +162,92 @@ control points that are applied in max-width media feature
 
 .projects-demonstration__portfolio-button {
   background-color: #1abcfe;
+  margin-left: 30px;
 }
-
-@media (max-width: 1079px) {
-  .projects-demonstration__wrapper {
-    align-items: center;
+@media (max-width: 1161px) {
+  .projects-demonstration__portfolio-advantage {
     flex-direction: column;
   }
+  .projects-demonstration__advantage-text {
+    margin-bottom: 20px;
+  }
+  .projects-demonstration__portfolio-button {
+    margin: 0;
+  }
+}
+@media (max-width: 1079px) {
+  .projects-demonstration__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
   .project-card {
-    max-width: 600px;
+    max-width: 55vw;
+    border-top-left-radius: 15px;
   }
   .project-card__content {
     display: none;
   }
   .project-card:not(:last-child) {
-    margin-bottom: 25px;
+    margin-bottom: 35px;
   }
   .project-card__slider {
-    width: 600px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    max-width: 55vw;
   }
-  .slider__slide {
-    height: 370px;
-  }
-  .slider__image {
-    width: 600px;
+  .project-card__slider > *:last-child {
+    display: none;
   }
 }
+@media (max-width: 991px) {
+  .projects-demonstration__portfolio-advantage {
+    margin-top: 70px;
+  }
+}
+@media (max-width: 767px) {
+  .projects-demonstration__title {
+    font-size: 2.2rem;
+  }
+  .projects-demonstration__wrapper {
+    margin-bottom: 45px;
+  }
+  .project-card {
+    max-width: 420px;
+  }
+  .project-card__slider {
+    max-width: 420px;
+  }
+  .projects-demonstration__portfolio-advantage {
+    padding: 0;
+  }
+  .projects-demonstration__advantage {
+    max-width: 600px;
+  }
+  .projects-demonstration__advantage-text {
+    text-align: center;
+  }
+}
+@media (max-width: 449px) {
+  .project-card {
+    width: 300px;
+  }
+  .project-card__slider {
+    width: 300px;
+  }
+  .projects-demonstration__advantage-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .projects-demonstration__advantage-text {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    max-width: 290px;
+  }
+  .projects-demonstration__portfolio-button {
+    font-size: 1.2rem;
+  }
+}
+
 /*  advantages  */
 
 .advantages {
@@ -231,13 +263,9 @@ control points that are applied in max-width media feature
 }
 .advantage-slider {
   display: flex;
-  /* width: 416px; */
   justify-content: space-between;
-  flex-basis: 416px;
-  /* height: 426px; задаємо в атрибуті style даного елемента */
+  width: 416px;
   overflow: hidden;
-}
-.advantages__slider {
 }
 .advantage-slider__indicator-box {
   height: 426px;
@@ -276,7 +304,8 @@ control points that are applied in max-width media feature
   object-fit: cover;
 }
 .advantages__content {
-  width: 307px;
+  margin-left: 30px;
+  max-width: 307px;
 }
 .advantages__description-title {
   font-size: 2.86rem;
@@ -288,8 +317,6 @@ control points that are applied in max-width media feature
 }
 .advantages__description-text span {
   font-weight: 600;
-}
-.advantages__items {
 }
 .advantages__title {
   text-align: center;
@@ -316,6 +343,7 @@ control points that are applied in max-width media feature
   transition: color 0.2s ease-in-out 0.05s;
 }
 .advantages__item > svg {
+  flex-shrink: 0;
   cursor: pointer;
 }
 .advantages__item > svg path {
@@ -327,7 +355,76 @@ control points that are applied in max-width media feature
 .advantages__item > svg:hover path {
   fill: #1abcfe;
 }
-
+@media (max-width: 1129px) {
+  .advantages__description {
+    padding: 0;
+    flex-direction: column;
+  }
+  .advantages__content {
+    max-width: 500px;
+  }
+  .advantages__content {
+    order: 0;
+    margin-bottom: 50px;
+  }
+  .advantage-slider {
+    order: 1;
+  }
+}
+@media (max-width: 767px) {
+  .advantages {
+    padding: 50px 0;
+  }
+  .advantages__description-title {
+    font-size: 2.4rem;
+  }
+  .advantages__title {
+    font-size: 2.4rem;
+    margin-bottom: 25px;
+  }
+  .advantages__item:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  .advantages__item > p {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 575px) {
+  .advantages {
+    padding: 40px 0;
+  }
+  .advantages__description-title {
+    font-size: 1.6rem;
+  }
+  .advantages__title {
+    font-size: 2rem;
+  }
+  .advantages__item:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  .advantages__item > svg {
+    height: 35px;
+  }
+  .advantages__item > p {
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+}
+@media (max-width: 459px) {
+  .advantage-slider {
+    width: 385px;
+  }
+}
+@media (max-width: 419px) {
+  .advantage-slider {
+    display: none;
+  }
+  .advantages__content {
+    max-width: 250px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+  }
+}
 /* services  */
 
 .services {
@@ -342,9 +439,6 @@ control points that are applied in max-width media feature
   align-items: center;
   margin-bottom: 70px;
 }
-.services__technology-icon-box {
-}
-
 .services__technologies-middle-icons-box {
   display: flex;
   flex-direction: column;
@@ -378,14 +472,12 @@ control points that are applied in max-width media feature
   justify-content: space-between;
 }
 .services__technologies-description-box {
-  flex-basis: 400px;
+  max-width: 400px;
 }
 .service-technologies-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.services__technologies-description-box {
 }
 .service-technologies-box__title {
   text-align: center;
@@ -400,3 +492,68 @@ control points that are applied in max-width media feature
 .service-technologies-box__button {
   background-color: #1abcfe;
 }
+@media (max-width: 869px) {
+  .services__technologies-icons {
+    flex-direction: column;
+  }
+  .services__technologies-middle-icons-box {
+    order: 0;
+  }
+  .services__technology-icon-box:last-child {
+    order: 1;
+  }
+  .services__technology-icon-box:first-child {
+    order: 2;
+  }
+  .services__technologies-icons > *:not(:first-child) {
+    margin-bottom: 40px;
+  }
+  .service-technologies-box__title {
+    padding: 0 20px;
+    font-size: 2.2rem;
+  }
+  .service-technologies-box__text {
+    padding: 0 30px;
+  }
+}
+@media (max-width: 767px) {
+  .services {
+    padding: 60px 0;
+  }
+  .services__technologies-description {
+    flex-direction: column;
+    align-items: center;
+  }
+  .services__technologies-description > *:not(:last-child) {
+    margin-bottom: 70px;
+  }
+  .services__technologies-description-box {
+    max-width: 620px;
+  }
+}
+@media (max-width: 575px) {
+  .services {
+    padding: 40px 0;
+  }
+}
+@media (max-width: 399px) {
+  .services__technologies-icons-first-row {
+    width: 210px;
+  }
+  .services__technologies-icons-second-row {
+    width: 270px;
+  }
+  .services__technology-icon-box:last-child > svg {
+    width: 220px;
+  }
+  .service-technologies-box__title {
+    font-size: 1.5rem;
+  }
+  .service-technologies-box__text {
+    font-size: 0.8rem;
+  }
+  .service-technologies-box__button {
+    font-size: 1.2rem;
+  }
+}
+/* Проект належить https://github.com/Stepan552 */

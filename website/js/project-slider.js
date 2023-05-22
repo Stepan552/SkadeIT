@@ -4,7 +4,14 @@ const projectSliderInfo = {
   indicatorsSelector: '.project-slider__indicator',
   activeIndicatorClass: 'project-slider__indicator_active',
   countSlides: document.querySelectorAll('.project-slider__slide').length,
-  slideWidth: document.querySelector('.project-slider__slide').offsetWidth,
+  sliderWidth: document.querySelector('.project-slider').offsetWidth,
+
+  /* Селектори слайдера для функції адаптиву defineSliderSizes */
+  sliderSelector: '.project-slider',
+  slidesBox: document.querySelector('.project-slider__slides'),
+  sliderImages: document.querySelectorAll('.project-slider__image'),
+  /* ------------------ */
+
   slidesBoxSelector: '.project-slider__slides',
   isIntervalRunning: false,
   intervalId: null,
@@ -18,5 +25,9 @@ function playProjectSlider() {
 function scrollHandler() {
   controlIntervalProcess(projectSliderInfo);
 }
-
+function resizeHandler() {
+  defineSliderSizes(projectSliderInfo);
+}
+defineSliderSizes(projectSliderInfo);
 window.addEventListener('scroll', scrollHandler);
+window.addEventListener('resize', resizeHandler);

@@ -1,6 +1,7 @@
 const creatingStages = document.querySelectorAll('.creating-stages__item');
 let currentStage = 0;
-
+let intervalStageId = null;
+let isIntervalStageRunning = false;
 let creatingStagesArray = [];
 creatingStages.forEach((stage) => {
   creatingStagesArray.push(stage);
@@ -33,4 +34,21 @@ function blinkIndicator() {
     indicator.classList.remove('creating-stages__item-indicator_not-active');
   }, 3200);
 }
-setInterval(changeStageNext, 3000);
+
+function checkViewportWidth() {
+  if (!(window.innerWidth > 575)) {
+    isIntervalStageRunning = false;
+    clearInterval(intervalStageId);
+  } else {
+    if (!isIntervalStageRunning) {
+      isIntervalStageRunning = true;
+      intervalStageId = setInterval(changeStageNext, 3000);
+    }
+  }
+}
+
+window.addEventListener('resize', checkViewportWidth);
+if (window.innerWidth > 575) {
+  isIntervalStageRunning = true;
+  intervalStageId = setInterval(changeStageNext, 3000);
+}
